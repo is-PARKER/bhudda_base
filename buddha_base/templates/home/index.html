@@ -1,0 +1,22 @@
+{% extends "/shared/_layout.html"%} 
+{% block title%}Python Package Index (demo){% endblock %}
+{% block main_content %}
+  <h1> Python Package Index</h1>
+
+  <h2> Packages</h2>
+
+{% for q in quotes %}
+  <div>
+    <span>
+      {{q.quote}}
+    </span>
+    <span>
+      {{q.book}}
+    </span>
+    <span>
+     {{q.page}}
+    </span> 
+  </div>
+
+{% endfor %}
+{% endblock %}
