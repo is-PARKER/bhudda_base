@@ -23,9 +23,9 @@ def setup_db():
 
 def register_blueprints():
   from views import home_views
-  from views import quote_views
+  #from views import quote_views
   app.register_blueprint(home_views.blueprint)
-  app.register_blueprint(quote_views.blueprint)
+  #app.register_blueprint(quote_views.blueprint)
 
 
 if __name__ == '__main__':

@@ -1,15 +1,18 @@
 from typing import List
+import datetime
+
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-from buddha_base.data.modelbase import SqlAlchemyBase
+from data.modelbase import SqlAlchemyBase
 from data.contributors import Contributor
 
-class Books(SqlAlchemyBase):
+class Book(SqlAlchemyBase):
 
   __tablename__ = "books"
 
-  title = sa.Column(sa.Integer, primary_key=True, index=True)
+  title = sa.Column(sa.String, primary_key=True, index=True)
+  created_date = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
   
   #TODO: Create scraper to populate database. 
   description = sa.Column(sa.String)
